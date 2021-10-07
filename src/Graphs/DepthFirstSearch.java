@@ -52,7 +52,7 @@ public class DepthFirstSearch {
 
     }
 
-    private void dfs_Iterative(int v, boolean[] visited) {
+    public void dfs_Iterative(int v, boolean[] visited) {
         Stack<Integer> stack=new Stack<>();
         stack.push(v);
         visited[v]=true;

@@ -1,12 +1,16 @@
-package Graphs;
+package Trees;
 
-import Trees.TreeNode;
-
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-public class RangeSumofBST {
-    /*public int rangeSumBST(TreeNode root, int low, int high) {
+//Given the root node of a binary search tree and two integers low and high,
+// return the sum of values of all nodes with a value in the inclusive range [low, high].
+//Input: root = [10,5,15,3,7,null,18], low = 7, high = 15
+//Output: 32
+public class RangeSumBST {
+   /* public int rangeSumBST(TreeNode root, int low, int high) {
         int sum=0;
         if(root==null){
             return sum;
@@ -25,7 +29,6 @@ public class RangeSumofBST {
                 queue.add(curr.right);
             }
         }
-        return sum;
-    }*/
+        return sum;*/
+    }
 
-}
