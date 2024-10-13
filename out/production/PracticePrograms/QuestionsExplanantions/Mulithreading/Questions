@@ -1,0 +1,21 @@
+1) What is multitasking : Executing several task simultaneously
+   Process Based : Executing several task simultaneously where each task is separate independent Process.
+   How do we see processes in Windows : Go to task manager and see
+   Ex: Using Windows app simultaneously
+   Thread Base: Executing several task simultaneously where each task is separate independent part of same program
+   How do we see thread running in chrome
+   Download and execute Process Explorer and go to chrome process right click properties and threads section
+   Process Based                              Thread Based
+   Heavy Weight                               Light Weight
+   Requires own separate address space        Shares the same address space
+   Interprocess communication is expensive    Inter thread communication is inexpensive
+   Context switching is also costly           Context switching is also not costly
+
+2) What is Thread : Thread is a light weight process within Process. java create Thread by using Thread class or Runnable interface
+   All java programs have atleast one thread called main thread, which get created by JVM  when main method gets invoked
+
+3) Types of Threads : User Thread and Daemon Thread
+   User Thread : All the threads created by developer inside the main thread are called user threads and non Daemon
+   Daemon Thread : Low priority thread that runs in background to perform tasks such as GC etc.
+   JVM terminates itself when user threads complete their task , it does not care where daemon thread is running or not .
+   If JVM finds running daemon thread upon completion of user threads , it termicates and shutdonw itself
