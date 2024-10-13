@@ -1,0 +1,15 @@
+Why? reduce dependency so that engineers can change one area of code without impacting others.
+  1) Single Responsibility Principle : One class should have one and only one responsibility.Means we should write change and maintain a class
+  for one and only one purpose. Testing will be easier Ex service layer, repository layer class
+
+  2) Open Closed Principle: A class or a component should be open for extension but closed for modifications
+      Open for extension means we can extend and inlcude extra functionality without affecting existing impl
+      Closed for modifications: After adding extra functionality , we should not modify existing functionality
+      Ex: Here Employee class is open for extension and closed for modification
+
+   3) Liskov Substitution Principle : Derived types must be completely substitutable for theri base types
+
+Liskov Substitution Principle:
+Interface Segregation Principle:
+Dependency Inversion:
+

@@ -19,13 +19,13 @@ public class MiddleNode {
             return null;
         }
 
-        Node a = node;
-        Node b = node;
-        while(b!= null && b.nxt!= null){
-            a = a.nxt;
-            b = b.nxt.nxt;
+        Node slow = node;
+        Node fast = node;
+        while(fast!= null && fast.nxt!= null){
+            slow = slow.nxt;
+            fast = fast.nxt.nxt;
         }
 
-        return a;
+        return slow;
     }
 }

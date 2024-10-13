@@ -1,0 +1,5 @@
+If a class has atleast one abstract method, then class should be declared as abstract
+If a class is abstract we cannot create object of that class
+A class can be declared as abstract even if no abstract methods present
+If the method is declared as abstract complusory subclass should provide impl else subclass should also be declared as abstract
+we can create a constructor of abstract class

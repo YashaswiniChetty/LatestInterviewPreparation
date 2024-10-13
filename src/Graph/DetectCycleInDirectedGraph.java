@@ -2,106 +2,68 @@ package Graph;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class DetectCycleInDirectedGraph {
-    int v;
-    List<List<Integer>> adjList ;
 
-    public DetectCycleInDirectedGraph(int v) {
-        this.v = v;
-        this.adjList= new ArrayList<>(v);
-        for(int i=0;i<v;i++){
-            adjList.add(new ArrayList<>());
-        }
-    }
-public void addEdge(int u , int v){
-        adjList.get(u).add(v);
-}
-
-public void DFSMianRecursion(){
-        boolean visited[]= new boolean[v];
-        for(int i=0;i<v;i++){
-            if(!visited[i]){
-                dfs_rec(i, visited);
-            }
-        }
-}
-
-public void dfs_rec(int v, boolean[] visited){
-        visited[v]=true;
-        System.out.println(v);
-        for(int u:adjList.get(v)){
-            if(!visited[u]){
-                dfs_rec(u,visited);
-            }
-        }
-}
-    public void DFSMianIterative(){
-        boolean visited[]= new boolean[v];
-        for(int i=0;i<v;i++){
-            if(!visited[i]){
-                dfs_ite(i, visited);
-            }
+    List<List<Integer>> graph ;
+    boolean visited[], recStack[];
+    int nodes;
+    DetectCycleInDirectedGraph(int nodes){
+        graph= new ArrayList<>();
+        visited= new boolean[nodes];
+        recStack=new boolean[nodes];
+        this.nodes= nodes;
+        for(int i=0;i<nodes;i++){
+            graph.add(i,new ArrayList<>());
         }
     }
 
-    public void dfs_ite(int v, boolean[] visited){
-        Stack<Integer> stack =  new Stack<>();
-        stack.push(v);
-        visited[v]=true;
-        while(!stack.isEmpty()){
-            int i= stack.pop();
-            System.out.println(i);
-            for(int u: adjList.get(i)){
-                if(!visited[u]){
-                    stack.push(u);
-                    visited[u]=true;
-                }
-            }
-        }
+    public void addEdge(int a, int b){
+        graph.get(a).add(b);
     }
 
-    public boolean isCyclic(){
-        boolean visited[] = new boolean[v];
-        boolean recVisit[] = new boolean[v];
-        for(int i=0;i<v;i++){
-            if(isCyclicDirected(i, visited, recVisit)){
-               return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean isCyclicDirected(int v, boolean[] visited, boolean [] recVisit){
-        if(recVisit[v]){
-            return true;
-        }
-
-        if(visited[v]){
-            return false;
-        }
-       visited[v]=true;
-        recVisit[v]=true;
-        System.out.println(v);
-        for(int u:adjList.get(v)){
-            if(isCyclicDirected(u,visited, recVisit)){
+    public boolean isDGHasCycle() {
+        for (int i = 0; i < nodes; i++) {
+            if (ifCycleExist(i)) {
                 return true;
             }
         }
-        recVisit[v]=false;//remove element from recstack
+            return false;
+        }
+
+
+    public boolean ifCycleExist(int index) {
+        if(recStack[index]){
+            return true;
+        }
+
+        if(visited[index]){
+            return false;
+        }
+
+        visited[index]=true;
+        recStack[index]=true;
+        List<Integer> neighborList = graph.get(index);
+        for(int neighbour: neighborList){
+            if(ifCycleExist(neighbour)){
+                return true;
+            }
+        }
+
+        recStack[index]=false;
         return false;
     }
 
     public static void main(String[] args) {
-        int v=5;
-        DetectCycleInDirectedGraph graph = new DetectCycleInDirectedGraph(5);
-        graph.addEdge(0, 1);
-        graph.addEdge(0, 3);
-        graph.addEdge(1, 2);
-        graph.addEdge(3, 2);
-        graph.addEdge(3, 4);
-        graph.DFSMianRecursion();
+        int n=4;
+        DetectCycleInDirectedGraph graph=new DetectCycleInDirectedGraph(n);
+        graph.addEdge(0,1);
+        graph.addEdge(1,2);
+        graph.addEdge(2,0);
+        graph.addEdge(0,3);
+        graph.addEdge(3,2);
+        System.out.println(graph.isDGHasCycle());
+
     }
 
 

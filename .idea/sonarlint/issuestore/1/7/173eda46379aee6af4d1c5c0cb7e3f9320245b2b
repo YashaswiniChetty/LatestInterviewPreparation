@@ -1,17 +1,0 @@
-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¾³ÿÄó.
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¿ğÏÄó.
-V
-squid:S1060"9Replace this use of System.out or System.err by a logger.(‹ƒ³À8½ÛŠÅó.
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(‹ƒ³À8½ÛŠÅó.
-Zsquid:S2589L"7Remove this expression which always evaluates to "true"(¬‰Ú¯şÿÿÿÿ8½ÛŠÅó.
-V
-squid:S106&"9Replace this use of System.out or System.err by a logger.(‹ƒ³À8½ÛŠÅó.
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õ¼Êúÿÿÿÿ
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8²«Æó.
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(•ŠÛß8şÓ§Æó.

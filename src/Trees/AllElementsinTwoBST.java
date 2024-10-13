@@ -8,7 +8,7 @@ public class AllElementsinTwoBST {
         List<Integer> list1= new ArrayList<>();
         List<Integer> list2= new ArrayList<>();
         inorder(root1, list1);
-        inorder(root1, list2);
+        inorder(root2, list2);
         return mergeList(list1, list2);
 
     }
@@ -33,9 +33,9 @@ public class AllElementsinTwoBST {
             }
         }
         while(i<list1.size())
-            finalList.add(list1.get(i));
+            finalList.add(list1.get(i++));
         while(j<list2.size())
-            finalList.add(list2.get(j));
+            finalList.add(list2.get(j++));
 
         return finalList;
     }

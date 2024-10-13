@@ -13,4 +13,11 @@ public class MaxProduct {
         }
         return max;
     }
+
+
+  /*  PriorityQueue<Integer> que = new PriorityQueue<Integer>((a,b)->b-a);
+        for(int num:nums){
+        que.offer(num);
+    }
+           return (que.poll()-1)*(que.poll()-1);*/
 }

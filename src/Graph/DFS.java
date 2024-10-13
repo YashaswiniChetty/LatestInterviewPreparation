@@ -71,13 +71,13 @@ public class DFS {
 
     public void printGraph( List<List<Integer>> adjList){
         for(int i=0;i<adjList.size();i++){
-            System.out.println("\nAdjacency list of vertex" + i);
-            System.out.print(i);
+          //  System.out.println("\nAdjacency list of vertex" + i);
+            //System.out.print(i);
             for (int j = 0; j < adjList.get(i).size(); j++) {
-                System.out.print(" -> "+adjList.get(i).get(j));
+             //   System.out.print(" -> "+adjList.get(i).get(j));
             }
-            System.out.println();
-            System.out.println("====================================");
+            //System.out.println();
+            //System.out.println("====================================");
         }
     }
     public static void main(String[] args) {
@@ -89,8 +89,8 @@ public class DFS {
         dfs.addEdge(3, 2);
         dfs.addEdge(3, 4);
         dfs.printGraph(adjList);
-       // dfs.DFSMain();
-        dfs.DFSIterativeMain();
+        dfs.DFSMain();
+        //dfs.DFSIterativeMain();
     }
 }
 

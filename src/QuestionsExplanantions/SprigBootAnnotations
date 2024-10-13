@@ -1,0 +1,51 @@
+1) @SpringBootApplication : Kick start the application .Combination of @Configuration, @EnabledAutoConfiguration
+   and @ComponentScan
+
+2) @SpringBootConfiguration : Is nothing but @Configuration
+
+3) @Configuration : Tags the class as a source of bean definition for application context
+
+4) @EnableAutoConfiguration : Auto configure application context. It automatically create and registers beans based on the jar files included in class
+   path and the beans defined by us. It should always we defined in base package, so tht spring can scan the base package
+   and auto configure the beans and this should be used with @Configuration
+   Ex: when we define spring-boot-starter-web dependency ,springboot autoconfigures Tomcat and Spring MVC
+   if u have added tomcat embeded jar then it will configure TomcatServletWebServerFactory(tomcat server)
+   If u want create own web server instaed of inbuild server we can use ServletWebServerfactory then autoconfig will use ur config to create server
+
+   How to exclude autoconfiguration
+     @EnableAutoConfiguration(exclude={jdbcConfig.class}) excludes list of classes
+     @EnableAutoConfiguration(excludeName={fullyQualifiedClassName}) excludes list of classes
+
+5) @ComponentScan : Tells spring to Scan the current packages and all the sub packages and should be used with @Configuration
+
+6) @Target : defines where we need to put the annotaion on either class, method etc EX: @SpringBootApplication we need to dines on class
+
+7) @Retention : what level annotation is available either read only (refer to source code),
+   refers to .class file available to compiler not to jvm,
+   refers to runtime available to compiler and jvm
+
+8) @Documented : Marks the annotation for inclusion in Documentation
+
+9) @Inherited : By default annotations are not inherited to subclass. using this annotation
+    we can mark the annotation to inherit to subclass
+
+10) @Autowired : Way to implement Dependency Injection. If the object is annotated with @Autowired, container will provide
+    bean to dependent bean during runtime. Spring container automires the bean by matching data type.
+
+11) @Component : How container will container autowire the required bean in depenedent bean during runtime, It first need to create bean during startup
+    so that it can provide bean later during runtime. how container will know which class should be considered as bean and whom to ignore
+    Its class level annotation. It is used to mark class as a bean. Its ageneric stereoType. The specializations are
+    @Controller, @Service , @Repository
+
+12) @Controller : Class level annotation. Marks the class as Web request handler to server web pages using http request.
+    Its used with @RequestMapping
+
+13) @Service : Its class level annotation. It tell spring class contains buisness logic. also makes it capable to become a bean in container
+    similar to component
+
+14) @Repository : Its class level annotation. The class annotated with @Repository directly intercat with database. The class does all operations
+    related to Database
+
+
+
+11) @Transient :

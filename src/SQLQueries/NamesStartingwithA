@@ -1,0 +1,3 @@
+SELECT * FROM Employee where EmployeeName LIKE 'A%';
+
+SELECT * FROM Employeee where EmployeeName LIKE '______A';

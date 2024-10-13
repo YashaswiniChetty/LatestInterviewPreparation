@@ -1,9 +1,0 @@
-
-Vsquid:S1197"8Move the array designator from the variable to the type.(¬Έ°8ΑΑ©Σ.
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(£αλώÿÿÿÿ
-‹ squid:ForLoopCounterChangedCheck"XRefactor the code in order to not assign to this loop counter from within the loop body.(Μ‚Μ8–η°Σ.
-Vsquid:S1197"8Move the array designator from the variable to the type.(’ΛΉ—8±ΉΣ.
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(ο·¨8Α½Σ.
-‹ squid:ForLoopCounterChangedCheck
-"XRefactor the code in order to not assign to this loop counter from within the loop body.(Μ‚Μ8–η°Σ.

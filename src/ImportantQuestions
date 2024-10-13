@@ -1,0 +1,94 @@
+1)Can we make top level class as private No
+ We can make top level class as public, abstract, final default, strictfp
+ how for innner class(yes we can)
+jvm architecture
+Global Exception handling @ControlelrAdvice and @ExceptionHandler(Exception.class)
+default(package private : same package) and protected (package private is same package and subclass)access modifiers
+idempotent: GET PUT DELETE are idempotent, POST is not: multiple same requests, reponse remains same
+Mapping in hibernet: @OnetoOne,@OneToMany,@manyTone,@manyTomany
+@NotFound(action=NotFoundAction.IGNORE) and @NotFound(action=NotFoundAction.EXCEPTION)
+cascading in hibernet:  @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+FetchType lazy and eager ex Address  @OneToMany(fetch=FetchType.EAGER or LAZY) by default its lazy
+caching in hibernet:first level by default and second level should be configured  hibernet.use__second_level_cache=true
+@Embadabble and @Embadded:
+@Transient=== if table should not contain empname in column
+differnet ways to create String object in java new and literal
+internal working of HashMap and enhanncement in 1.8
+shallow == adress and deep copy contnt comparison======
+hashcode and equals contract pending==============================
+SOLID Principles
+Difference between String and StringBuffer and StringBuilder
+generics
+wrapper classes
+Garbage Collection working
+Encapsulation, Abstraction,Polymorphism,Inheritance,Composition,Aggregation
+Difference between Comparable and Comparator
+instanceof operator
+Static and instance control flow
+super(), this(), super, this
+does abstarct class have constructor and cna we crate obejct of abstarct class
+how to break singleton
+how to access private methods of class
+how to create immutable class
+Recursive constrctor invocation
+Default and static methods in java8
+marker interface
+
+=============
+thread life cycle and programs
+
+why java is not 100% oo
+jvm , jdk,jre
+string is immutable
+
+can we overide private n static methods
+final finally finalize()
+noclassdeffound error and classnotfoundexception
+char[] or string
+Methods in Object class
+Exception
+serilization
+Collection and concurrent collection
+Threading n programs
+hibernet
+Microservices api gateway,communication,fault
+Spring boot auto config
+Spring
+actuators
+java 8
+optional class
+map n flatmap
+overloading and overriding
+query and path param
+patterns
+Normalizaion
+indexing
+aggregation func
+joins
+young old gen
+stack and heap memeory
+casting
+JPA
+difference between JPA and crud repo
+@id, Entity and Gerated value
+sql second higest and duplcate find and remove and max sal group
+design patterns
+===================
+implement queue using single stack
+differences between Arrays and Linked Lists:
+=================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

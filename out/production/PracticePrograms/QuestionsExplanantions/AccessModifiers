@@ -1,0 +1,8 @@
+1)Can we make top level class as private or protected No
+ We can make top level class as public, abstract, final default, strictfp
+  public : Can be accessed from anywhere
+  final: Cant be extended
+  abstract: dont have complete impl, can create a subclass to provide impl, object cannot be created
+  default: Can be accessed within current package
+
+We can make Inner class as private protected and static , but the Inner can only be accessed inside the top level class where Inner class is defined

@@ -99,6 +99,6 @@ public class DetectCycleInUnDirectedGraph {
         graph.addEdge(3, 2);
         graph.addEdge(3, 4);
        // graph.DFSMianRecursion();
-        graph.isCyclic();
+        System.out.println(graph.isCyclic());
     }
 }

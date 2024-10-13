@@ -5,59 +5,51 @@ import java.util.List;
 import java.util.Stack;
 
 public class Topologicalsort {
-    int v ;
-    static List<List<Integer>> adjList ;
 
-    Topologicalsort(int v){
-        this.v = v;
-        this.adjList = new ArrayList<>(v);
-        for(int i=0;i<v;i++){
-            adjList.add(new ArrayList<>());
+    List<List<Integer>> graph;
+    int nodes;
+    Topologicalsort(int nodes){
+        graph= new ArrayList<>();
+        this.nodes=nodes;
+        for(int i=0;i<nodes;i++){
+            graph.add(i,new ArrayList<>());
         }
     }
 
-    public void addEdge(int u , int v){
-        adjList.get(u).add(v);
+    public void addEdge(int a , int b){
+        graph.get(a).add(b);
     }
 
-    public void DFSMain(){
+    public void toplogicalSortUtil(int index, boolean[] visited,Stack<Integer> stack){
+        visited[index] = true;
+        List<Integer> neighbourList= graph.get(index);
+        for(int neighbour: neighbourList){
+            if(!visited[neighbour])
+                toplogicalSortUtil(neighbour, visited, stack);
+        }
+        stack.push(index);
+    }
+
+    public void topoSort(){
+        boolean[] visited = new boolean[nodes];
         Stack<Integer> stack = new Stack<>();
-        boolean visited[] =new boolean[v];
-        for(int i=0;i<v;i++){
-            if(!visited[i]){
-                dfsRecursive(i, visited, stack);
-            }
-        }
-        while(!stack.isEmpty()){
+        for(int i = 0; i < nodes; ++i)
+            if(!visited[i])
+                toplogicalSortUtil(i, visited, stack);
+
+        while(!stack.empty())
             System.out.println(stack.pop());
-        }
     }
 
-    public void dfsRecursive(int v, boolean[] visited, Stack<Integer> stack){
-        visited[v]=true;
-        for(int u: adjList.get(v) ){
-            if(!visited[u]){
-                dfsRecursive(u, visited, stack);
-            }
-        }
-        stack.push(v);
-        System.out.println();
-
+    public static void main(String []args){
+        Topologicalsort G = new Topologicalsort(5);
+        G.addEdge(0,1);
+        G.addEdge(0,3);
+        G.addEdge(0,4);
+        G.addEdge(1,2);
+        G.addEdge(4,2);
+        G.addEdge(3,4);
+        G.topoSort();
     }
 
-
-
-
-
-    public static void main(String[] args) {
-        int v=5;
-        Topologicalsort dfs = new Topologicalsort(v);
-        dfs.addEdge(0, 1);
-        dfs.addEdge(0, 3);
-        dfs.addEdge(0, 4);
-        dfs.addEdge(1, 2);
-        dfs.addEdge(4, 2);
-        dfs.addEdge(3, 4);
-        dfs.DFSMain();
-    }
 }

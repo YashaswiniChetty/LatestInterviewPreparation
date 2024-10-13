@@ -46,12 +46,17 @@ class CreatLinkedList {
             return node;
         }
         Node current = node;
-        while (current.nxt != null) {
+       /* while (current.nxt != null) {
             current = current.nxt;
         }
         current.nxt = lastNode;
 
-        return node;
+        return node;*/
+       while(current.nxt.nxt!=null){
+           current=current.nxt;
+       }
+       current.nxt.nxt=lastNode;
+       return node;
     }
 
 }

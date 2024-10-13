@@ -1,0 +1,1 @@
+UPDATE Employee SET income=income+(income*5)/100;

@@ -1,5 +1,5 @@
 package Trees;
-
+//left n right subtree of every node differ in height by no more than one
 public class BalanvedBinaryTree {
     TreeNode root;
     public boolean isBalanced(TreeNode root) {

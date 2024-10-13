@@ -1,0 +1,80 @@
+-- DISTINCT keyword::: selects only the DISTINCT values from the "Country" column in the "Customers" table:
+SELECT DISTINCT Country FROM Customers;
+
+
+--COUNT()::::function count number of different (distinct) customer countries:
+SELECT COUNT(DISTINCT Country) FROM Customers;
+SELECT COUNT (*) FROM Customers;
+SELECT COUNT(*) FROM Customers WHERE ContactName='Maria Anders';
+
+
+--TOP clause is used to specify the number of records to return.
+SELECT TOP 3 ContactName FROM Customers;
+
+
+--LIMIT clause to select a limited number of records
+SELECT ContactName From Customers LIMIT 3;
+
+--first() function is used to return the first value of the selected column.
+SELECT FIRST(customer_name) FROM customers;--o/p KAMAL SHARMA
+
+--The LAST() function in Structured Query Language shows the last value from the specified column of the table
+SELECT LAST(customer_name) FROM customers;
+
+--RANDOM() function returns the random row
+SELECT column FROM table  ORDER BY RAND () LIMIT 1
+
+--The IN operator allows you to specify multiple values in a WHERE clause.The IN operator is a shorthand for multiple OR conditions.
+SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK');
+
+--The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+SELECT * FROM Products WHERE Price BETWEEN 10 AND 20;
+
+--LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+SELECT * FROM Customers WHERE CustomerName LIKE 'a%';
+SELECT * FROM Customers WHERE CustomerName LIKE '%a';
+SELECT * FROM Customers WHERE CustomerName LIKE '%or%';
+SELECT * FROM Customers WHERE CustomerName LIKE '_r%';
+
+--SQL aliases are used to give a table, or a column in a table, a temporary name.
+SELECT CustomerID AS ID, CustomerName AS Customer FROM Customers;
+
+--GROUP BY statement groups rows that have the same values The GROUP BY statement is often used with
+-- aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country;
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country ORDER BY COUNT(CustomerID) DESC;
+
+
+--The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5;
+SELECT COUNT(CustomerID), Country FROM Customers GROUP BY Country HAVING COUNT(CustomerID) > 5 ORDER BY COUNT(CustomerID) DESC;
+
+--A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+-- The UNIQUE constraint ensures that all values in a column are different.
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    UNIQUE (ID)
+);
+--The AND operator displays a record if all the conditions separated by AND are TRUE.
+--The OR operator displays a record if any of the conditions separated by OR is TRUE
+SELECT * FROM Customers
+WHERE Country='Germany' AND City='Berlin';
+SELECT * FROM Customers
+WHERE City='Berlin' OR City='München';
+
+--A stored procedure in Structured Query Language
+-- is a group of logical statements stored in the database for performing a particular task.
+CREATE PROCEDURE Show_All_Students AS
+SELECT * FROM Student_Stored_Procedure GO ;
+EXEC Show_All_Students;
+
+CREATE PROCEDURE Show_Particular_Course_Student @Student_Course nvarchar(50) AS
+SELECT * FROM Student_Stored_Procedure WHERE Student_Course = @Student_Course GO;
+EXEC Show_Particular_Course_Student @Student_Course = 'B.tech';
+
+
+
+
